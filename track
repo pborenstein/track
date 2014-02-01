@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-TRACKDIR=$HOME/tmp/TRACK
+TRACKDIR=$HOME/.track
 mkdir -p $TRACKDIR
 
 FILENAME=$(date "+%Y-%m-%d").txt
@@ -14,5 +14,3 @@ if  $(grep -q $TIME $TRACKFILE)  ; then
     TIME='     '
 fi
 echo "${TIME}  " ${*} >> $TRACKFILE
-
-
