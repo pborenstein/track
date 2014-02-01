@@ -1,0 +1,18 @@
+#! /usr/bin/bash
+
+TRACKDIR=$HOME/tmp/TRACK
+mkdir -p $TRACKDIR
+
+FILENAME=$(date "+%Y-%m-%d").txt
+TRACKFILE=$TRACKDIR/$FILENAME
+
+touch ${TRACKFILE}
+
+TIME=$(date "+%H:%M")
+
+if  $(grep -q $TIME $TRACKFILE)  ; then
+    TIME='     '
+fi
+echo "${TIME}  " ${*} >> $TRACKFILE
+
+
